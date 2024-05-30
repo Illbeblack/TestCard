@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import CardHeader from '../ui/CardHeader';
-import CardImg from '../ui/CardImg';
-import CardText from '../ui/CardText';
+import CardHeader from './CardHeader';
+import CardImg from './CardImg';
+import CardText from './CardText';
 
 const StyledCard = styled.div`
   position: relative;
@@ -59,7 +59,14 @@ const StyledCard = styled.div`
 
 function Card({ type, width, header, headerfs, text, clickHandler, ...props }) {
   return (
-    <StyledCard type={type} width={width} onClick={(e) => clickHandler()}>
+    <StyledCard
+      type={type}
+      width={width}
+      onClick={(e) => {
+        e.preventDefault();
+        clickHandler();
+      }}
+    >
       <CardHeader headerfs={headerfs}>{header}</CardHeader>
       <CardText>{text}</CardText>
       {props.img && props.alt && <CardImg src={props.img} alt={props.alt} />}

@@ -4,7 +4,7 @@ import picture from './assets/picture.svg';
 import money from './assets/money.svg';
 import turbo from './assets/turbo.svg';
 
-import Card from './components/Card';
+import Card from './components/Card/Card';
 import styled from 'styled-components';
 
 const FlexContainer = styled.div`
